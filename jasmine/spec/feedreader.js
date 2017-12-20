@@ -103,7 +103,7 @@ $(function () {
         loadFeed(1, function () {
             init_feed = $('.feed').html();
             loadFeed(2, function () {
-                done();
+
             });
         });
         afterEach(function () {
