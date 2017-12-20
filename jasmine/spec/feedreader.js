@@ -100,12 +100,15 @@ $(function () {
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('NEW feed Selection', function () {
         var init_feed, new_feed;
-        loadFeed(1, function () {
-            init_feed = $('.feed').html();
-            loadFeed(2, function () {
-
+        beforeEach(function (done) {
+            loadFeed(1, function () {
+                init_feed = $('.feed').html();
+                loadFeed(2, function () {
+                    done();
+                });
             });
         });
+
         afterEach(function () {
             loadFeed(0);
         });
